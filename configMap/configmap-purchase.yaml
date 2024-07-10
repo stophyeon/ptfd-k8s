@@ -7,9 +7,8 @@ data:
     server:
       port: 6080
     spring:
-      config:
-        activate:
-          on-profile: dev
+      profiles:
+        active: dev
       datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://198.19.194.245:3307/member?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
