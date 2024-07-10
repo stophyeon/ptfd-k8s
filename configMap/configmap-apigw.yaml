@@ -1,0 +1,182 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: apigw-config
+data:
+  application.yml: |
+    server:
+      port: 8888
+    spring:
+      application:
+        name: API-GW
+      cloud:
+        gateway:
+          globalcors:
+            corsConfigurations:
+              '[/**]':
+                allowedOrigins: "http://localhost:3000"
+                allowedHeaders:
+                  - x-requested-with
+                  - authorization
+                  - content-type
+                  - credential
+                  - X-AUTH-TOKEN
+                  - X-CSRF-TOKEN
+                allowedMethods:
+                  - POST
+                  - GET
+                  - PUT
+                  - OPTIONS
+                  - DELETE
+                  
+          routes:
+            - id: CHAT-API
+              uri: lb://CHAT-API
+              predicates:
+                - Path=/ws/**
+            - id: CHAT-API
+              uri: lb://CHAT-API
+              predicates:
+                - Path=/chat/**
+            - id: MEMBER-API
+              uri: lb://MEMBER-API
+              predicates:
+                - Path=/member/profile
+              filters:
+                - name: JwtAuthentication
+                  args: 
+                    headerName: Authorization
+                    granted: Bearer
+            - id: MEMBER-API
+              uri: lb://MEMBER-API
+              predicates:
+                - Path=/genderlist/**
+            - id: MEMBER-API
+              uri: lb://MEMBER-API
+              predicates:
+                - Path=/kakao/logout
+            - id: MEMBER-API
+              uri: lb://MEMBER-API
+              predicates:
+                - Path=/nick_name
+            - id: MEMBER-API
+              uri: lb://MEMBER-API
+              predicates:
+                - Path=/email
+            - id: MEMBER-API
+              uri: lb://MEMBER-API
+              predicates:
+                - Path=/member/profile/other/**
+              filters:
+                - name: JwtAuthentication
+                  args: 
+                    headerName: Authorization
+                    granted: Bearer
+            - id: MEMBER-API
+              uri: lb://MEMBER-API
+              predicates:
+                - Path=/member/logout/**
+              filters:
+                - name: JwtAuthentication
+                  args: 
+                    headerName: Authorization
+                    granted: Bearer
+            - id: MEMBER-API
+              uri: lb://MEMBER-API
+              predicates:
+                - Path=/member/payments/**
+              filters:
+                - name: JwtAuthentication
+                  args: 
+                    headerName: Authorization
+                    granted: Bearer
+            - id: MEMBER-API
+              uri: lb://MEMBER-API
+              predicates:
+                - Path=/member/**
+            - id: MEMBER-API
+              uri: lb://MEMBER-API
+              predicates:
+                - Path=/oauth2/**
+            - id: MEMBER-API
+              uri: lb://MEMBER-API
+              predicates:
+                - Path=/follow
+              filters:
+                - name: JwtAuthentication
+                  args: 
+                    headerName: Authorization
+                    granted: Bearer
+            - id: MEMBER-API
+              uri: lb://MEMBER-API
+              predicates:
+                - Path=/follow/follower/**
+              
+            - id: MEMBER-API
+              uri: lb://MEMBER-API
+              predicates:
+                - Path=/follow/following/**
+            - id: POST-API
+              uri: lb://POST-API
+              predicates:
+                - Path=/post/page_post/**
+
+            - id: POST-API
+              uri: lb://POST-API
+              predicates:
+                - Path=/post/notices
+
+            - id: POST-API
+              uri: lb://POST-API
+              predicates:
+                - Path=/thumbnailfinal.jpg
+            - id: POST-API
+              uri: lb://POST-API
+              predicates:
+                - Path=/post/page
+            
+            - id: POST-API
+              uri: lb://POST-API
+              predicates:
+                - Path=/post/search/**
+            - id: POST-API
+              uri: lb://POST-API
+              predicates:
+                - Path=/post/mypage
+            - id: POST-API
+              uri: lb://POST-API
+              predicates:
+                - Path=/post/profile/like/**
+            - id: POST-API
+              uri: lb://POST-API
+              predicates:
+                - Path=/post/detail
+            - id: POST-API
+              uri: lb://POST-API
+              predicates:
+                - Path=/post/like/**
+              filters:
+                - name: JwtAuthentication 
+                  args: 
+                    headerName: Authorization
+                    granted: Bearer
+            - id: POST-API
+              uri: lb://POST-API
+              predicates:
+                - Path=/post/**
+              filters:
+                - name: JwtAuthentication
+                  args: 
+                    headerName: Authorization
+                    granted: Bearer
+            - id: PURCHASE-API
+              uri: lb://PURCHASE-API
+              predicates:
+                - Path=/payments/**
+              filters:
+                - name: JwtAuthentication 
+                  args: 
+                    headerName: Authorization
+                    granted: Bearer
+    jwt:
+      secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFsLWppd29vbi1zcHJpbmctYm9vdC1zZWN1cml0eS1qd3QtdHV0b3JpYWwK

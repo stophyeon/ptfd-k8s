@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: purchase-service-deployment
+  labels:
+    app: purchase-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: purchase-service
+  template:
+    metadata:
+      labels:
+        app: purchase-service
+    spec:
+      containers:
+      - name: purchase-service
+        image: jihyukdocker/purchase:purchase
+        ports:
+        - containerPort: 6080
+        volumeMounts:
+            - name: config-volume
+              mountPath: /config/application.yml
+              subPath: application.yml
+      volumes:
+        - name: config-volume
+          configMap:
+            name: purchase-config
+            items:
+              - key: application.yml
+                path: application.yml

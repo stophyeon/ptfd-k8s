@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: purchase-config
+data:
+  application.yml: |
+    server:
+      port: 6080
+    spring:
+      config:
+        activate:
+          on-profile: dev
+      datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://198.19.194.245:3307/member?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+        username: root
+        password : asas1212!
+      application:
+        name: member-api
+      jpa:
+        hibernate:
+          ddl-auto: update
+        properties:
+          hibernate:
+            show_sql: true

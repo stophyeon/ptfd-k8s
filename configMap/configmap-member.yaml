@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: member-config
+data:
+  application.yml: |
+    server:
+      port: 8081
+    spring:
+      servlet:
+        multipart:
+          max-file-size: 128MB
+          max-request-size: 128MB
+          enabled: true
+      config:
+        activate:
+          on-profile: dev
+      datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://198.19.195.212:3308/member?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+        username: root
+        password : asas1212!
+      application:
+        name: member-api
+      jpa:
+        hibernate:
+          ddl-auto: update
+        properties:
+          hibernate:
+            show_sql: true
+    jwt:
+      secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFsLWppd29vbi1zcHJpbmctYm9vdC1zZWN1cml0eS1qd3QtdHV0b3JpYWwK
