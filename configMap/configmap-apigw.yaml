@@ -40,8 +40,8 @@ data:
               uri: lb://CHAT-API
               predicates:
                 - Path=/chat/**
-            - id: MEMBER-API
-              uri: lb://MEMBER-API
+            - id: member-service
+              uri: http://member-service.default.svc.cluster.local:81
               predicates:
                 - Path=/member/profile
               filters:
@@ -49,24 +49,24 @@ data:
                   args: 
                     headerName: Authorization
                     granted: Bearer
-            - id: MEMBER-API
-              uri: lb://MEMBER-API
+            - id: member-service
+              uri: http://member-service.default.svc.cluster.local:81
               predicates:
                 - Path=/genderlist/**
-            - id: MEMBER-API
-              uri: lb://MEMBER-API
+            - id: member-service
+              uri: http://member-service.default.svc.cluster.local:81
               predicates:
                 - Path=/kakao/logout
-            - id: MEMBER-API
-              uri: lb://MEMBER-API
+            - id: member-service
+              uri: http://member-service.default.svc.cluster.local:81
               predicates:
                 - Path=/nick_name
-            - id: MEMBER-API
-              uri: lb://MEMBER-API
+            - id: member-service
+              uri: http://member-service.default.svc.cluster.local:81
               predicates:
                 - Path=/email
-            - id: MEMBER-API
-              uri: lb://MEMBER-API
+            - id: member-service
+              uri: http://member-service.default.svc.cluster.local:81
               predicates:
                 - Path=/member/profile/other/**
               filters:
@@ -74,8 +74,8 @@ data:
                   args: 
                     headerName: Authorization
                     granted: Bearer
-            - id: MEMBER-API
-              uri: lb://MEMBER-API
+            - id: member-service
+              uri: http://member-service.default.svc.cluster.local:81
               predicates:
                 - Path=/member/logout/**
               filters:
@@ -83,8 +83,8 @@ data:
                   args: 
                     headerName: Authorization
                     granted: Bearer
-            - id: MEMBER-API
-              uri: lb://MEMBER-API
+            - id: member-service
+              uri: http://member-service.default.svc.cluster.local:81
               predicates:
                 - Path=/member/payments/**
               filters:
@@ -92,16 +92,16 @@ data:
                   args: 
                     headerName: Authorization
                     granted: Bearer
-            - id: MEMBER-API
-              uri: lb://MEMBER-API
+            - id: member-service
+              uri: http://member-service.default.svc.cluster.local:81
               predicates:
                 - Path=/member/**
-            - id: MEMBER-API
-              uri: lb://MEMBER-API
+            - id: member-service
+              uri: http://member-service.default.svc.cluster.local:81
               predicates:
                 - Path=/oauth2/**
-            - id: MEMBER-API
-              uri: lb://MEMBER-API
+            - id: member-service
+              uri: http://member-service.default.svc.cluster.local:81
               predicates:
                 - Path=/follow
               filters:
@@ -109,52 +109,52 @@ data:
                   args: 
                     headerName: Authorization
                     granted: Bearer
-            - id: MEMBER-API
-              uri: lb://MEMBER-API
+            - id: member-service
+              uri: http://member-service.default.svc.cluster.local:81
               predicates:
                 - Path=/follow/follower/**
               
-            - id: MEMBER-API
-              uri: lb://MEMBER-API
+            - id: member-service
+              uri: http://member-service.default.svc.cluster.local:81
               predicates:
                 - Path=/follow/following/**
-            - id: POST-API
-              uri: lb://POST-API
+            - id: post-service
+              uri: http://post-service.default.svc.cluster.local:70
               predicates:
                 - Path=/post/page_post/**
 
-            - id: POST-API
-              uri: lb://POST-API
+            - id: post-service
+              uri: http://post-service.default.svc.cluster.local:70
               predicates:
                 - Path=/post/notices
 
-            - id: POST-API
-              uri: lb://POST-API
+            - id: post-service
+              uri: http://post-service.default.svc.cluster.local:70
               predicates:
                 - Path=/thumbnailfinal.jpg
-            - id: POST-API
-              uri: lb://POST-API
+            - id: post-service
+              uri: http://post-service.default.svc.cluster.local:70
               predicates:
                 - Path=/post/page
             
-            - id: POST-API
-              uri: lb://POST-API
+            - id: post-service
+              uri: http://post-service.default.svc.cluster.local:70
               predicates:
                 - Path=/post/search/**
-            - id: POST-API
-              uri: lb://POST-API
+            - id: post-service
+              uri: http://post-service.default.svc.cluster.local:70
               predicates:
                 - Path=/post/mypage
-            - id: POST-API
-              uri: lb://POST-API
+            - id: post-service
+              uri: http://post-service.default.svc.cluster.local:70
               predicates:
                 - Path=/post/profile/like/**
-            - id: POST-API
-              uri: lb://POST-API
+            - id: post-service
+              uri: http://post-service.default.svc.cluster.local:70
               predicates:
                 - Path=/post/detail
-            - id: POST-API
-              uri: lb://POST-API
+            - id: post-service
+              uri: http://post-service.default.svc.cluster.local:70
               predicates:
                 - Path=/post/like/**
               filters:
@@ -162,8 +162,8 @@ data:
                   args: 
                     headerName: Authorization
                     granted: Bearer
-            - id: POST-API
-              uri: lb://POST-API
+            - id: post-service
+              uri: http://post-service.default.svc.cluster.local:70
               predicates:
                 - Path=/post/**
               filters:
@@ -171,8 +171,8 @@ data:
                   args: 
                     headerName: Authorization
                     granted: Bearer
-            - id: PURCHASE-API
-              uri: lb://PURCHASE-API
+            - id: purchase-service
+              uri: http://purchase-service.default.svc.cluster.local:60
               predicates:
                 - Path=/payments/**
               filters:
