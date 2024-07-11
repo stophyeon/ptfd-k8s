@@ -11,11 +11,11 @@ data:
         active: dev
       datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://198.19.194.245:3307/member?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+        url: jdbc:mysql://mysql-payment-service:3307/payment?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
         username: root
         password : asas1212!
       application:
-        name: member-api
+        name: purchase-api
       jpa:
         hibernate:
           ddl-auto: update

@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: post-service-deployment
-  labels:
-    app: post-service
 spec:
   replicas: 1
   selector:
@@ -15,11 +13,11 @@ spec:
         app: post-service
     spec:
       containers:
-      - name: post-service
-        image: stophyeon/test:post
-        ports:
-        - containerPort: 7080
-        volumeMounts:
+        - name: post-service
+          image: stophyeon/test:post
+          ports:
+            - containerPort: 7080
+          volumeMounts:
             - name: config-volume
               mountPath: /config/application.yml
               subPath: application.yml

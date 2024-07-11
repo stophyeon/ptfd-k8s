@@ -13,7 +13,7 @@ data:
         allow-bean-definition-overriding: true
       datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://198.19.190.91:3305/post?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+        url: jdbc:mysql://mysql-post-service:3305/post?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
         username: root
         password : asas1212!
       application:
@@ -24,22 +24,22 @@ data:
         properties:
           hibernate:
             show_sql: true
-        mail:
-          host: smtp.naver.com
-          port: 465
-          username: darakbang0414
-          password: asas1212
-          properties:
-            mail.smtp.auth: true
-            mail.smtp.starttls.enable: true
-            mail.smtps.checkserveridentity: true
-            mail.smtps.ssl.trust: "*"
-            mail.debug: true
-            mail.smtp.socketFactory.class: javax.net.ssl.SSLSocketFactory
-        s3:
-          accessKey: 38F622CB2CE7257CD472
-          secretKey: 8AD3992D3D09C965081B0B4687B4D6B017E4D915
-          bucket: contest16-objectstorage-imagebucket
+      mail:
+        host: smtp.naver.com
+        port: 465
+        username: darakbang0414
+        password: asas1212
+        properties:
+          mail.smtp.auth: true
+          mail.smtp.starttls.enable: true
+          mail.smtps.checkserveridentity: true
+          mail.smtps.ssl.trust: "*"
+          mail.debug: true
+          mail.smtp.socketFactory.class: javax.net.ssl.SSLSocketFactory
+      s3:
+        accessKey: 38F622CB2CE7257CD472
+        secretKey: 8AD3992D3D09C965081B0B4687B4D6B017E4D915
+        bucket: contest16-objectstorage-imagebucket
     management:
       endpoints:
         web:
