@@ -16,7 +16,7 @@ data:
           enabled: true
       datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://mysql-member-service:3308/member?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+        url: jdbc:mysql://mysql-member-service.ptfd-db.svc.cluster.local:3308/member?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
         username: root
         password : asas1212!
       application:

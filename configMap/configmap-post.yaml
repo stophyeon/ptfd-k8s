@@ -13,7 +13,7 @@ data:
         allow-bean-definition-overriding: true
       datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://mysql-post-service:3305/post?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+        url: jdbc:mysql://mysql-post-service.ptfd-db.svc.cluster.local:3305/post?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
         username: root
         password : asas1212!
       application:

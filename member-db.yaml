@@ -3,12 +3,14 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: mysql-member-pod
+  namespace: ptfd-db
   labels:
     app: mysql-member
 spec:
   containers:
   - name: mysql-member-db
     image: mysql:latest
+    
     env:
     - name: MYSQL_ROOT_PASSWORD
       value: "asas1212!"
@@ -16,13 +18,16 @@ spec:
     - containerPort: 3306
     volumeMounts:
     - name: mysql-client-config
+      
       mountPath: /etc/mysql/my.cnf
       subPath: my.cnf
       readOnly: true
   volumes:
   - name: mysql-client-config
+    
     configMap:
       name: mysql-client-config
+      
 
 
 

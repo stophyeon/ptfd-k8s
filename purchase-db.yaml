@@ -3,6 +3,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: mysql-payment-pod
+  namespace: ptfd-db
   labels:
     app: mysql-payment
 spec:
@@ -21,8 +22,10 @@ spec:
       readOnly: true
   volumes:
   - name: mysql-client-config
+    
     configMap:
       name: mysql-client-config
+      
 
 
 
