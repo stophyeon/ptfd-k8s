@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: member-service
-          image: stophyeon/test:member
+          image: contest16-member.kr.ncr.ntruss.com/member:latest
           ports:
             - containerPort: 8081
           volumeMounts:

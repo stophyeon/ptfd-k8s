@@ -27,7 +27,7 @@ data:
         bucket: contest16-objectstorage-imagebucket
       jpa:
         hibernate:
-          ddl-auto: create
+          ddl-auto: validate
         properties:
           hibernate:
             show_sql: true

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: post-service
-          image: stophyeon/test:post
+          image: contest16-post.kr.ncr.ntruss.com/post:latest
           ports:
             - containerPort: 7080
           volumeMounts:

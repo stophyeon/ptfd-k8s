@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: purchase-service
-          image: stophyeon/test:purchase
+          image: contest16-purchase.kr.ncr.ntruss.com/purchase:latest
           ports:
             - containerPort: 6080
           volumeMounts:
