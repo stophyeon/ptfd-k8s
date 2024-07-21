@@ -27,8 +27,8 @@ data:
       mail:
         host: smtp.naver.com
         port: 465
-        username: darakbang0414
-        password: asas1212
+        username: 5-stars16
+        password: asas1212!
         properties:
           mail.smtp.auth: true
           mail.smtp.starttls.enable: true
