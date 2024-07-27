@@ -15,6 +15,8 @@ data:
           max-request-size: 128MB
           enabled: true
       datasource:
+        hikari:
+          maximum-pool-size: 30
         driver-class-name: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://mysql-member-service.ptfd-db.svc.cluster.local:3308/member?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
         username: root

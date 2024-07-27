@@ -34,7 +34,7 @@ data:
           mail.smtp.starttls.enable: true
           mail.smtps.checkserveridentity: true
           mail.smtps.ssl.trust: "*"
-          mail.debug: true
+          mail.debug: false
           mail.smtp.socketFactory.class: javax.net.ssl.SSLSocketFactory
       s3:
         accessKey: 38F622CB2CE7257CD472
