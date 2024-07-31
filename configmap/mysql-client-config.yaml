@@ -15,5 +15,4 @@ data:
 metadata:
   name: mysql-client-config
   namespace: db
-  resourceVersion: "11774685"
-  uid: 4be226d8-34b1-421f-b653-a19f27cd994c
+  
