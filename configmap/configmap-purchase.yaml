@@ -11,14 +11,14 @@ data:
         active: dev
       datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://mysql-payment-service.ptfd-db.svc.cluster.local:3307/payment?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+        url: jdbc:mysql://mysql-payment-service.db.svc.cluster.local:3307/payment?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
         username: root
         password : asas1212!
       application:
         name: purchase-api
       jpa:
         hibernate:
-          ddl-auto: validate
+          ddl-auto: create
         properties:
           hibernate:
             show_sql: true

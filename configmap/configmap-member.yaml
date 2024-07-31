@@ -18,7 +18,7 @@ data:
         hikari:
           maximum-pool-size: 30
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://mysql-member-service.ptfd-db.svc.cluster.local:3308/member?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+        url: jdbc:mysql://mysql-member-service.db.svc.cluster.local:3308/member?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
         username: root
         password : asas1212!
       application:
@@ -29,7 +29,7 @@ data:
         bucket: contest16-objectstorage-imagebucket
       jpa:
         hibernate:
-          ddl-auto: validate
+          ddl-auto: create
         properties:
           hibernate:
             show_sql: true
