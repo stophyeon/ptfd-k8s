@@ -17,6 +17,6 @@ metadata:
       {"apiVersion":"v1","data":{"my.cnf":"[client]\ndefault-character-set = utf8mb4\n[mysql]\ndefault-character-set = utf8mb4\n[mysqld]\ncharacter-set-server = utf8mb4\ncollation-server = utf8mb4_unicode_ci\ninit_connect='SET NAMES utf8mb4'\nmax_connect_errors = 5\n"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"mysql-client-config","namespace":"default"}}
   creationTimestamp: "2024-07-07T06:05:23Z"
   name: mysql-client-config
-  namespace: ptfd-db
+  namespace: db
   resourceVersion: "11774685"
   uid: 4be226d8-34b1-421f-b653-a19f27cd994c
