@@ -16,7 +16,7 @@ data:
           globalcors:
             corsConfigurations:
               '[/**]':
-                allowedOrigins: "http://localhost:3000, http://default-front-84485-25569413-20a094b6a545.kr.lb.naverncp.com:30"
+                allowedOrigins: "http://192.168.23.73:30227, http://default-front-84485-25569413-20a094b6a545.kr.lb.naverncp.com:30"
                 allowedHeaders:
                   - x-requested-with
                   - authorization
