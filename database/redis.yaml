@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-deployment
-  namespace: ptfd-db
+  namespace: db
   labels:
     app: redis
 spec:
