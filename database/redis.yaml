@@ -1,23 +1,15 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: redis-deployment
+  name: redis-pod
   namespace: db
   labels:
     app: redis
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: redis
-  template:
-    metadata:
-      labels:
-        app: redis
-    spec:
-      containers:
-      - name: redis
-        image: redis:latest
-        ports:
-        - containerPort: 6379
+  containers:
+  - name: redis
+    image: redis:latest
+    ports:
+    - containerPort: 6379
+      name: redis
         

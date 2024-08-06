@@ -14,7 +14,7 @@ data:
           host: redis-service.db.svc.cluster.local
           port: 6379
         mongodb:
-          uri: mongodb://root:1234@mongodb-service.db.svc.cluster.local:27017/chat
+          uri: mongodb://jjh:1234@mongodb-service.db.svc.cluster.local:27017/chat
           database: chat
       application:
         name: chat-api

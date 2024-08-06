@@ -16,7 +16,7 @@ data:
           globalcors:
             corsConfigurations:
               '[/**]':
-                allowedOrigins: "http://192.168.23.73:30227, http://default-front-84485-25569413-20a094b6a545.kr.lb.naverncp.com:30"
+                allowedOrigins: "http://192.168.23.73:32319, http://default-front-84485-25569413-20a094b6a545.kr.lb.naverncp.com:30"
                 allowedHeaders:
                   - x-requested-with
                   - authorization
@@ -32,14 +32,25 @@ data:
                   - DELETE
                   
           routes:
-            - id: CHAT-API
-              uri: lb://CHAT-API
-              predicates:
-                - Path=/ws/**
-            - id: CHAT-API
-              uri: lb://CHAT-API
+            
+            - id: chat-service
+              uri: http://chat-service.default.svc.cluster.local:50
               predicates:
                 - Path=/chat/**
+              filters:
+                - name: JwtAuthentication
+                  args: 
+                    headerName: Authorization
+                    granted: Bearer
+            - id: chat-service
+              uri: http://chat-service.default.svc.cluster.local:50
+              predicates:
+                - Path=/chatroom/**
+              filters:
+                - name: JwtAuthentication
+                  args: 
+                    headerName: Authorization
+                    granted: Bearer
             - id: member-service
               uri: http://member-service.default.svc.cluster.local:81
               predicates:
