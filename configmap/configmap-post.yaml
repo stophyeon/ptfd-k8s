@@ -40,6 +40,8 @@ data:
         accessKey: 38F622CB2CE7257CD472
         secretKey: 8AD3992D3D09C965081B0B4687B4D6B017E4D915
         bucket: contest16-objectstorage-imagebucket
+
+      keys: rvRo/EomkhcJUeX2xTlwBc2zJd1sWphzDDsAjkHtSiMX1D61CGivhnADZJVMqlMiW02jMV9YDrvzXfoIm7bAoA==
     management:
       endpoints:
         web:
